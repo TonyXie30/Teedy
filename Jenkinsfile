@@ -19,8 +19,6 @@ stage('Test'){
     sh 'mvn test'
     sh 'mvn surefire-report:report'
 }
-stage('')
-
 }
 }
 post {
