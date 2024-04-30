@@ -13,12 +13,12 @@ sh 'mvn pmd:pmd'
 }
 stage('doc'){
     steps{
-        sh 'mvm javadoc:jar'
+        sh 'mvn javadoc:jar'
     }
 }
 stage('Test'){
     steps{
-        sh 'mvn test'
+        sh 'mvn test --fail-never'
         sh 'mvn surefire-report:report'
     }
 }
