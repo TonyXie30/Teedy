@@ -15,9 +15,12 @@ stage('javadoc'){
 steps {
     sh 'mvn javadoc:jar'
 }
+}
 stage('Test'){
-    sh 'mvn test'
-    sh 'mvn surefire-report:report'
+    steps{
+        sh 'mvn test'
+        sh 'mvn surefire-report:report'
+    }
 }
 }
 }
