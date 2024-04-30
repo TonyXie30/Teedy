@@ -14,6 +14,7 @@ sh 'mvn pmd:pmd'
 stage('doc'){
     steps{
         sh 'mvn javadoc:jar'
+        sh 'mvn javadoc:aggregate'
     }
 }
 stage('Test'){
